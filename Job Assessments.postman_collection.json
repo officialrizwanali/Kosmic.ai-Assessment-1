@@ -1,0 +1,1129 @@
+{
+	"info": {
+		"_postman_id": "00eea3ed-1f4e-40d6-a718-a32edabeca33",
+		"name": "Job Assessments",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1463077"
+	},
+	"item": [
+		{
+			"name": "Kosmic.ai - Assessment 2024.05.xx",
+			"item": [
+				{
+					"name": "Upload video",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/Users/rizwanali/Clouds/Mega - official/Rolustech/Misc. stuff/downloads/[CA-4864] PDF & Video lead magnet - Jira.mp4"
+								},
+								{
+									"key": "checksum",
+									"value": "ca4831af326a133c293fa823a82400d1acecfba5aff1de65e9fd91d72278e213",
+									"type": "text"
+								},
+								{
+									"key": "checkFileUploadIntegrity",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:55667/video/upload",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55667",
+							"path": [
+								"video",
+								"upload"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error 1 - No file provided",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "video",
+											"type": "file",
+											"src": "/path/to/your/video.mp4"
+										},
+										{
+											"key": "checksum",
+											"value": "CHECKSUM_VALUE",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:55667/upload",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"upload"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-onk6IZjTjlvdo7oEedoK8CJs0As\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 May 2024 14:01:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"No file uploaded\"\n}"
+						},
+						{
+							"name": "Success 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "video",
+											"type": "file",
+											"src": "/Users/rizwanali/Clouds/Mega - official/Rolustech/Misc. stuff/downloads/2MB.mp4"
+										},
+										{
+											"key": "checksum",
+											"value": "ca4831af326a133c293fa823a82400d1acecfba5aff1de65e9fd91d72278e213",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:55667/upload",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"upload"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-UfCMLrEEOaJ8YJr3SScwANsVydI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 May 2024 15:19:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"filename\": \"1716650387876.mp4\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Process video",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"filename\": \"1716724507780.mp4\",\n  // \"outputFilename\": \"18.mp4\",\n  \"effects\": {\n    \"grayscale\": false,\n    \"negate\": true,\n    \"sepia\": false,\n    \"blur\": false,\n    \"sharpen\": true\n  },\n  \"dimensions\": {\n    \"width\": null,\n    \"height\": null\n    // \"width\": 1920,\n    // \"height\": 1080\n  },\n  \"metadata\": {\n    \"title\": null,\n    \"description\": null\n  },\n  \"convertToMp4\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:55667/video/process",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55667",
+							"path": [
+								"video",
+								"process"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"filename\": \"1716646010658.mp4\",\n    // \"outputFilename\": \"\",\n    \"effects\": {\n        \"grayscale\": true,\n        \"negate\": false,\n        \"sepia\": false,\n        \"blur\": false,\n        \"sharpen\": false\n    },\n    \"dimentions\": {\n        \"width\": null,\n        \"height\": null\n    },\n    \"metadata\": {\n        \"title\": null,\n        \"description\": null\n    },\n    \"convertToMp4\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:55667/process",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"process"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-5Tw/MnuhaxhzTnL8smCSSVlwSPM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 May 2024 19:42:29 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Video added to the processing job queue\"\n}"
+						},
+						{
+							"name": "Error 1 - input file not found",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"filename\": \"171664601065asdfasdf8.mp4\",\n    // \"outputFilename\": \"\",\n    \"effects\": {\n        \"grayscale\": true,\n        \"negate\": false,\n        \"sepia\": false,\n        \"blur\": false,\n        \"sharpen\": false\n    },\n    \"dimentions\": {\n        \"width\": null,\n        \"height\": null\n    },\n    \"metadata\": {\n        \"title\": null,\n        \"description\": null\n    },\n    \"convertToMp4\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:55667/process",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"process"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-qXGfN9t+AtsqoUJSBpc9ym+XpDk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 May 2024 19:42:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"File not found\"\n}"
+						},
+						{
+							"name": "Error 2 - not adding job",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"filename\": \"1716646010658.mp4\",\n    // \"outputFilename\": \"\",\n    \"effects\": {\n        \"grayscale\": true,\n        \"negate\": false,\n        \"sepia\": false,\n        \"blur\": false,\n        \"sharpen\": false\n    },\n    \"dimentions\": {\n        \"width\": null,\n        \"height\": null\n    },\n    \"metadata\": {\n        \"title\": null,\n        \"description\": null\n    },\n    \"convertToMp4\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:55667/process",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"process"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "38"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"26-2hcY8C0Nr1QbsbBmalis+PDv/HQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 May 2024 20:13:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Failed to add job to queue\"\n}"
+						},
+						{
+							"name": "Success 2",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"filename\": \"1716646010658.mp4\",\n    // \"outputFilename\": \"\",\n    \"effects\": {\n        \"grayscale\": true,\n        \"negate\": false,\n        \"sepia\": false,\n        \"blur\": false,\n        \"sharpen\": false\n    },\n    \"dimentions\": {\n        \"width\": null,\n        \"height\": null\n    },\n    \"metadata\": {\n        \"title\": null,\n        \"description\": null\n    },\n    \"convertToMp4\": false\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:55667/process",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"process"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-79oS15QVoeziOL7/ov1fwcNZ9tY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 May 2024 20:28:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"jobId\": \"1\",\n    \"message\": \"Video added to the processing job queue\"\n}"
+						},
+						{
+							"name": "Success 3",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"filename\": \"1716724507780.mp4\",\n  // \"outputFilename\": \"18.mp4\",\n  \"effects\": {\n    \"grayscale\": false,\n    \"negate\": true,\n    \"sepia\": false,\n    \"blur\": false,\n    \"sharpen\": true\n  },\n  \"dimensions\": {\n    \"width\": null,\n    \"height\": null\n    // \"width\": 1920,\n    // \"height\": 1080\n  },\n  \"metadata\": {\n    \"title\": null,\n    \"description\": null\n  },\n  \"convertToMp4\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:55667/video/process",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"video",
+										"process"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "113"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"71-jJB+Z6auiFFxbtJ/KxxvCYb3aP4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 26 May 2024 19:31:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"jobId\": \"28\",\n    \"message\": \"Video added to the processing job queue\",\n    \"outputFilename\": \"processed-1716724507780.mp4\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Video processing progress",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:55667/video/process/progress/:jobId",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55667",
+							"path": [
+								"video",
+								"process",
+								"progress",
+								":jobId"
+							],
+							"variable": [
+								{
+									"key": "jobId",
+									"value": "26"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Success 1 - dummy progress",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:55667/progress/:jobId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"progress",
+										":jobId"
+									],
+									"variable": [
+										{
+											"key": "jobId",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "44"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c-2Q0WhnXrJTMVrDmkIsVt3h8SD+I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 25 May 2024 20:51:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"jobId\": \"4\",\n    \"progress\": 30,\n    \"state\": \"active\"\n}"
+						},
+						{
+							"name": "Error 1",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:55667/progress/:jobId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"progress",
+										":jobId"
+									],
+									"variable": [
+										{
+											"key": "jobId",
+											"value": "5"
+										}
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-dONJJLk6VOpDnTdw4OZGONPHA8Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 26 May 2024 08:40:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Job is not in processing or has not been processed yet\"\n}"
+						},
+						{
+							"name": "Success 2 - started",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:55667/progress/:jobId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"progress",
+										":jobId"
+									],
+									"variable": [
+										{
+											"key": "jobId",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "43"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2b-4X7odWSDFUVdz80SwwXDt6Ttx28\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 26 May 2024 08:51:43 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"jobId\": \"6\",\n    \"progress\": 0,\n    \"state\": \"active\"\n}"
+						},
+						{
+							"name": "Success 3 - Completed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:55667/progress/:jobId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"progress",
+										":jobId"
+									],
+									"variable": [
+										{
+											"key": "jobId",
+											"value": "6"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "46"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2e-MgXOBgvvmLKSnleGW7w7YLXFIkE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 26 May 2024 08:51:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"jobId\": \"6\",\n    \"progress\": 0,\n    \"state\": \"completed\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Get timed download token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"filename\": \"processed-1716724507780.mp4\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:55667/video/download/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55667",
+							"path": [
+								"video",
+								"download",
+								"token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error 1 - no filename provided",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"filename\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:55667/video/download/token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"video",
+										"download",
+										"token"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-7K6xUyPJ7fjM7U9ni/eekcoxclc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 26 May 2024 11:48:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"No filename provided\"\n}"
+						},
+						{
+							"name": "Error 2 - Invalid file",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"filename\": \"swefsd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:55667/video/download/token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"video",
+										"download",
+										"token"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "26"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a-qXGfN9t+AtsqoUJSBpc9ym+XpDk\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 26 May 2024 11:51:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"File not found\"\n}"
+						},
+						{
+							"name": "Success 1",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"filename\": \"processed-1716724507780.mp4\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:55667/video/download/token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"video",
+										"download",
+										"token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-9+bEcwloQsqxejzC987l8Aii0XA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 26 May 2024 19:39:28 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"downloadLink\": \"/video/download/257fb824853d0935ddce4cc11c7c01112e4e7c2a\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Download file by token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:55667/video/download/:token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "55667",
+							"path": [
+								"video",
+								"download",
+								":token"
+							],
+							"variable": [
+								{
+									"key": "token",
+									"value": "40a5db47751b9ab10af3683151c194c267dcc365"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error 1 - link expired",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:55667/video/download/:token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "55667",
+									"path": [
+										"video",
+										"download",
+										":token"
+									],
+									"variable": [
+										{
+											"key": "token",
+											"value": "40a5db47751b9ab10af3683151c194c267dcc365"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-WjF+aJGJffziv2rxky4lb+UAq04\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 26 May 2024 11:56:12 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"error\": \"Link expired or invalid\"\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}
